@@ -1,690 +1,408 @@
 ﻿<!DOCTYPE html>
-
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Credit Agricole Agro+</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Credit Agricole — Агро-бюджет</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <div class="app">
 
-
-    <!-- SIDEBAR -->
     <aside class="sidebar">
-
         <div class="logo">
             <div class="logo-mark">CA</div>
             <div>
                 <strong>Credit Agricole</strong>
-                <span>Agro+</span>
+                <span>Агро-бюджет</span>
             </div>
         </div>
 
         <nav class="nav">
-            <button class="active" data-page="home">
-                <span>🏠</span>
-                <span>Головна</span>
-            </button>
-
-            <button data-page="finance">
-                <span>💰</span>
-                <span>Фінанси</span>
-            </button>
-
-            <button data-page="subscriptions">
-                <span>📦</span>
-                <span>Підписки</span>
-            </button>
-
-            <button data-page="agro">
-                <span>🌱</span>
-                <span>Agro-подушка</span>
-            </button>
-
-            <button data-page="analytics">
-                <span>📊</span>
-                <span>Аналітика</span>
-            </button>
-
-            <button data-page="profile">
-                <span>👤</span>
-                <span>Профіль</span>
-            </button>
+            <button class="active" data-page="home"><span>🏠</span><span>Огляд</span></button>
+            <button data-page="cashflow"><span>📈</span><span>Кешфлоу</span><span class="dot"></span></button>
+            <button data-page="purchase"><span>🚜</span><span>Закупівля</span></button>
+            <button data-page="rent"><span>🤝</span><span>Оренда поруч</span></button>
+            <button data-page="analytics"><span>📊</span><span>Аналітика</span></button>
+            <button data-page="profile"><span>👤</span><span>Господарство</span></button>
         </nav>
 
         <div class="sidebar-bottom">
             <div class="security">
                 <span>🔒</span>
                 <div>
-                    <strong>Безпека</strong>
-                    <small>Ваші кошти захищені</small>
+                    <strong>Банківська таємниця</strong>
+                    <small>Контакти сусідів відкриваються лише після взаємної згоди</small>
                 </div>
             </div>
         </div>
-
     </aside>
 
-
-    <!-- MAIN -->
     <main class="main">
 
-        <!-- HEADER -->
         <header class="topbar">
             <div>
-                <span class="eyebrow">AGRO+</span>
-                <h1 id="pageTitle">Головна</h1>
+                <span class="eyebrow">АГРО-БЮДЖЕТ</span>
+                <h1 id="pageTitle">Огляд</h1>
             </div>
-
             <div class="user-mini">
-                <div class="avatar">UN</div>
+                <div class="avatar">SN</div>
                 <div>
-                    <strong>Name</strong>
-                    <small>Приватний клієнт</small>
+                    <strong>ФГ «NAME»</strong>
+                    <small>120 га · 4-та група ЄП</small>
                 </div>
             </div>
         </header>
 
-
-        <!-- HOME -->
+        <!-- ОГЛЯД -->
         <section class="page active" id="home">
 
             <div class="hero-card">
                 <div>
-                    <span class="label">Загальний баланс</span>
-                    <h2>128 450 ₴</h2>
-                    <p class="positive">↑ 8,4% за цей місяць</p>
+                    <span class="label">Залишок на рахунках</span>
+                    <h2>610 000 ₴</h2>
+                    <p class="hero-sub">Прогноз побудовано на операціях за 3 сезони</p>
                 </div>
 
-                <div class="hero-decoration">₴</div>
+                <div class="gap-alert">
+                    <strong>⚠ ПРОГНОЗОВАНИЙ КАСОВИЙ РОЗРИВ</strong>
+                    <h3>−240 000 ₴</h3>
+                    <p>Травень – червень 2027, за 8 місяців від сьогодні. Причина: посівна та пальне йдуть раніше, ніж гроші за пшеницю.</p>
+                    <button class="primary-button" onclick="showPage('cashflow')">Подивитись прогноз</button>
+                </div>
             </div>
-
 
             <div class="quick-actions">
-
-                <button class="action-card" onclick="openModal('transferModal')">
-                    <div class="action-icon">↗</div>
-                    <strong>Переказати</strong>
-                    <span>Надіслати кошти</span>
+                <button class="action-card" onclick="showPage('cashflow')">
+                    <div class="action-icon">📈</div>
+                    <strong>Прогноз кешфлоу</strong>
+                    <span>12 місяців наперед із сезонністю</span>
                 </button>
-
-                <button class="action-card" onclick="openModal('topupModal')">
-                    <div class="action-icon">＋</div>
-                    <strong>Поповнити</strong>
-                    <span>Додати кошти</span>
+                <button class="action-card" onclick="showPage('purchase')">
+                    <div class="action-icon">🚜</div>
+                    <strong>Потреба в техніці</strong>
+                    <span>Купити, кредит або оренда</span>
                 </button>
-
-                <button class="action-card" onclick="showPage('agro')">
-                    <div class="action-icon">🌱</div>
-                    <strong>Agro-подушка</strong>
-                    <span>Резерв на сезон</span>
+                <button class="action-card" onclick="showPage('rent')">
+                    <div class="action-icon">🤝</div>
+                    <strong>Оренда в сусіда</strong>
+                    <span>4 господарства поруч із банку</span>
                 </button>
-
             </div>
-
 
             <div class="section-heading">
-                <div>
-                    <h2>Ваші фінансові продукти</h2>
-                    <p>Інструменти для стабільності та розвитку</p>
-                </div>
+                <h2>Що ШІ помітив цього тижня</h2>
+                <p>Розрахунки робить звичайний код, ШІ лише пояснює результат</p>
             </div>
 
-
-            <div class="products-grid">
-
-                <div class="product-card">
-                    <div class="product-top">
-                        <span class="product-icon">🌱</span>
-                        <span class="status">Активна</span>
-                    </div>
-
-                    <h3>Agro-подушка</h3>
-                    <p>Фінансовий резерв для непередбачених витрат.</p>
-
-                    <div class="product-value">
-                        <strong>10 000 ₴</strong>
-                        <span>із 20 000 ₴</span>
-                    </div>
-
-                    <div class="progress">
-                        <div style="width:50%"></div>
-                    </div>
+            <div class="grid-3">
+                <div class="stat-card">
+                    <span>Безпечне боргове навантаження</span>
+                    <strong>480 000 ₴</strong>
+                    <small>≈ 28% прогнозованої виручки сезону</small>
                 </div>
-
-
-                <div class="product-card">
-                    <div class="product-top">
-                        <span class="product-icon">📦</span>
-                        <span class="status">Активна</span>
-                    </div>
-
-                    <h3>Agro Start</h3>
-                    <p>Базовий набір фінансових сервісів.</p>
-
-                    <div class="product-value">
-                        <strong>99 ₴</strong>
-                        <span>на місяць</span>
-                    </div>
+                <div class="stat-card">
+                    <span>Найбільша разова витрата</span>
+                    <strong>Обприскувач</strong>
+                    <small class="negative">420–520 тис ₴ · ламає бюджет травня</small>
                 </div>
-
-
-                <div class="product-card">
-                    <div class="product-top">
-                        <span class="product-icon">📈</span>
-                        <span class="status">Новинка</span>
-                    </div>
-
-                    <h3>Фінансовий аналітик</h3>
-                    <p>Автоматичний аналіз ваших витрат та доходів.</p>
-
-                    <button class="text-button" onclick="showPage('analytics')">
-                        Переглянути →
-                    </button>
+                <div class="stat-card">
+                    <span>Простій техніки поруч</span>
+                    <strong>4 одиниці</strong>
+                    <small class="positive">Доступні до оренди у радіусі 30 км</small>
                 </div>
-
             </div>
-
 
             <div class="section-heading">
-                <div>
-                    <h2>Останні операції</h2>
-                    <p>Ваші останні фінансові активності</p>
-                </div>
+                <h2>Останні операції</h2>
+                <p>ШІ питає про нетипові витрати, підтверджує клієнт</p>
             </div>
 
-
-            <div class="transactions">
-
+            <div class="list-card" id="txList">
                 <div class="transaction">
-                    <div class="transaction-icon income">↓</div>
-                    <div class="transaction-info">
-                        <strong>Поповнення рахунку</strong>
-                        <span>Сьогодні, 12:42</span>
+                    <div class="t-icon expense">?</div>
+                    <div class="t-info">
+                        <strong>Нетипова витрата — 96 400 ₴</strong>
+                        <span>Вчора · ТОВ «Агротехсервіс» · що це було?</span>
                     </div>
-                    <strong class="transaction-amount positive">+15 000 ₴</strong>
+                    <button class="secondary-button" onclick="tagExpense(this)">Позначити</button>
                 </div>
-
                 <div class="transaction">
-                    <div class="transaction-icon expense">↑</div>
-                    <div class="transaction-info">
-                        <strong>Пальне</strong>
-                        <span>Сьогодні, 09:15</span>
-                    </div>
-                    <strong class="transaction-amount">−2 400 ₴</strong>
+                    <div class="t-icon income">↓</div>
+                    <div class="t-info"><strong>Оплата за пшеницю, 2-й транш</strong><span>Сьогодні, 12:42 · ТОВ «Зернотрейд»</span></div>
+                    <strong class="t-amount positive">+180 000 ₴</strong>
                 </div>
-
                 <div class="transaction">
-                    <div class="transaction-icon expense">↑</div>
-                    <div class="transaction-info">
-                        <strong>Добрива</strong>
-                        <span>Вчора, 16:30</span>
-                    </div>
-                    <strong class="transaction-amount">−8 700 ₴</strong>
+                    <div class="t-icon expense">↑</div>
+                    <div class="t-info"><strong>Пальне (ДП)</strong><span>Сьогодні, 09:15</span></div>
+                    <strong class="t-amount">−62 400 ₴</strong>
                 </div>
-
+                <div class="transaction">
+                    <div class="t-icon expense">↑</div>
+                    <div class="t-info"><strong>Зарплата, 5 працівників</strong><span>Вчора, 16:30</span></div>
+                    <strong class="t-amount">−85 000 ₴</strong>
+                </div>
             </div>
-
         </section>
 
-
-        <!-- FINANCE -->
-        <section class="page" id="finance">
-
+        <!-- КЕШФЛОУ -->
+        <section class="page" id="cashflow">
             <div class="page-intro">
-                <h2>Фінанси</h2>
-                <p>Контролюйте доходи, витрати та накопичення.</p>
+                <h2>Прогноз кешфлоу</h2>
+                <p>Залишок на кінець кожного місяця. Натисніть на стовпчик, щоб побачити деталі.</p>
             </div>
-
-            <div class="stats-grid">
-
-                <div class="stat-card">
-                    <span>Доходи</span>
-                    <strong>186 400 ₴</strong>
-                    <small class="positive">↑ 12,5%</small>
-                </div>
-
-                <div class="stat-card">
-                    <span>Витрати</span>
-                    <strong>57 950 ₴</strong>
-                    <small>За поточний місяць</small>
-                </div>
-
-                <div class="stat-card">
-                    <span>Заощадження</span>
-                    <strong>128 450 ₴</strong>
-                    <small class="positive">69% доходу</small>
-                </div>
-
-            </div>
-
 
             <div class="content-card">
                 <div class="card-heading">
                     <div>
-                        <h3>Фінансовий баланс</h3>
-                        <p>Динаміка за останні 6 місяців</p>
+                        <h3>Вересень 2026 — серпень 2027</h3>
+                        <p>Побудовано за фактичною сезонністю господарства</p>
                     </div>
+                    <button class="secondary-button" onclick="showPage('purchase')">Додати закупівлю →</button>
                 </div>
 
-                <div class="chart">
-
-                    <div class="bar-group">
-                        <div class="bar" style="height:45%"></div>
-                        <span>Квіт</span>
-                    </div>
-
-                    <div class="bar-group">
-                        <div class="bar" style="height:58%"></div>
-                        <span>Трав</span>
-                    </div>
-
-                    <div class="bar-group">
-                        <div class="bar" style="height:52%"></div>
-                        <span>Чер</span>
-                    </div>
-
-                    <div class="bar-group">
-                        <div class="bar" style="height:70%"></div>
-                        <span>Лип</span>
-                    </div>
-
-                    <div class="bar-group">
-                        <div class="bar" style="height:78%"></div>
-                        <span>Сер</span>
-                    </div>
-
-                    <div class="bar-group">
-                        <div class="bar active-bar" style="height:92%"></div>
-                        <span>Вер</span>
-                    </div>
-
+                <div class="chart-wrap">
+                    <div class="chart" id="chart"><div class="zero-line"></div></div>
                 </div>
+
+                <div class="legend">
+                    <div><span class="chip-sq" style="background:rgba(168,211,111,.4)"></span> Позитивний залишок</div>
+                    <div><span class="chip-sq" style="background:rgba(239,114,114,.6)"></span> Касовий розрив</div>
+                    <div><span class="chip-sq" style="background:rgba(255,255,255,.18)"></span> Нульова лінія</div>
+                </div>
+
+                <div class="month-detail" id="monthDetail"></div>
             </div>
 
+            <div class="chat">
+                <div class="chat-head">
+                    <div class="chat-avatar">🌾</div>
+                    <div>
+                        <strong>ШІ-менеджер бюджету</strong>
+                        <small>Бачить ваші операції та сезонність</small>
+                    </div>
+                </div>
+                <div class="chat-body" id="chatBody">
+                    <div class="msg bot">Я перерахував бюджет на 12 місяців. Головне: <b>у травні 2027 залишок стає від'ємним</b> і тримається таким два місяці. Запитайте, що хочете уточнити.</div>
+                </div>
+                <div class="chips" id="chips"></div>
+            </div>
+        </section>
 
-            <div class="content-card goal-card">
+        <!-- ЗАКУПІВЛЯ -->
+        <section class="page" id="purchase">
+            <div class="page-intro">
+                <h2>Потреба в закупівлі</h2>
+                <p>Вкажіть, що плануєте придбати — система зіставить ціну з вашим бюджетом і покаже три варіанти.</p>
+            </div>
 
+            <div class="content-card">
+                <div class="form-grid">
+                    <div class="field">
+                        <label>Що потрібно</label>
+                        <select id="equipment">
+                            <option value="sprayer">Обприскувач причіпний, 2000 л</option>
+                            <option value="seeder">Сівалка просапна, 8 рядків</option>
+                            <option value="tractor">Трактор 150 к.с., б/в</option>
+                            <option value="harvester">Жатка зернова, 6 м</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label>Коли потрібна</label>
+                        <select id="whenMonth">
+                            <option value="4">Квітень 2027</option>
+                            <option value="5" selected>Травень 2027</option>
+                            <option value="6">Червень 2027</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label>Площа обробітку, га</label>
+                        <input id="area" type="number" value="120" min="1">
+                    </div>
+                </div>
+                <button class="primary-button" onclick="calcOptions()">Порахувати варіанти</button>
+            </div>
+
+            <div id="optionsWrap" style="display:none">
+                <div class="section-heading">
+                    <h2>Три способи закрити потребу</h2>
+                    <p id="optionsSub"></p>
+                </div>
+                <div class="options" id="options"></div>
+            </div>
+        </section>
+
+        <!-- ОРЕНДА -->
+        <section class="page" id="rent">
+            <div class="page-intro">
+                <h2>Оренда в сусіда</h2>
+                <p>Господарства-клієнти банку поруч із вами, чия техніка простоює. Банк виступає гарантом: ескроу, страхування, договір.</p>
+            </div>
+
+            <div class="list-card" id="neighbours"></div>
+
+            <div class="recommendation">
+                <div class="recommendation-icon">🛡️</div>
                 <div>
-                    <span class="label">Фінансова ціль</span>
-                    <h3>Резервний фонд</h3>
-                    <p>Залишилось накопичити 10 000 ₴</p>
+                    <strong>Як банк захищає обидві сторони</strong>
+                    <p>Гроші орендаря резервуються на ескроу-рахунку й переходять власнику після підтвердження повернення техніки. Страховий поліс партнера покриває пошкодження. Власник техніки отримує дохід у простій і легше обслуговує власний кредит.</p>
                 </div>
-
-                <div class="goal-progress">
-                    <strong>50%</strong>
-                    <div class="progress">
-                        <div style="width:50%"></div>
-                    </div>
-                </div>
-
             </div>
-
         </section>
 
-
-        <!-- SUBSCRIPTIONS -->
-        <section class="page" id="subscriptions">
-
-            <div class="page-intro">
-                <h2>Підписки</h2>
-                <p>Оберіть набір сервісів під ваші фінансові потреби.</p>
-            </div>
-
-
-            <div class="subscription-grid">
-
-                <div class="subscription-card">
-
-                    <span class="subscription-badge">Для початку</span>
-
-                    <h3>Agro Start</h3>
-
-                    <div class="price">
-                        99 ₴
-                        <span>/ місяць</span>
-                    </div>
-
-                    <p>Основні фінансові інструменти для щоденного використання.</p>
-
-                    <ul>
-                        <li>✓ Автоматична аналітика</li>
-                        <li>✓ Фінансові нагадування</li>
-                        <li>✓ Контроль витрат</li>
-                        <li>✓ Agro-подушка</li>
-                    </ul>
-
-                    <button class="primary-button" onclick="activateSubscription('Agro Start')">
-                        Підключити
-                    </button>
-
-                </div>
-
-
-                <div class="subscription-card featured">
-
-                    <span class="subscription-badge">Для бізнесу</span>
-
-                    <h3>Agro Business</h3>
-
-                    <div class="price">
-                        299 ₴
-                        <span>/ місяць</span>
-                    </div>
-
-                    <p>Розширені інструменти для управління фінансами агробізнесу.</p>
-
-                    <ul>
-                        <li>✓ Все з Agro Start</li>
-                        <li>✓ Бізнес-аналітика</li>
-                        <li>✓ Прогнозування витрат</li>
-                        <li>✓ Розширена Agro-подушка</li>
-                    </ul>
-
-                    <button class="primary-button" onclick="activateSubscription('Agro Business')">
-                        Підключити
-                    </button>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- AGRO -->
-        <section class="page" id="agro">
-
-            <div class="page-intro">
-                <h2>Agro-подушка</h2>
-                <p>Ваш резерв для непередбачених витрат та сезонних ризиків.</p>
-            </div>
-
-
-            <div class="agro-main-card">
-
-                <div class="agro-icon">🌱</div>
-
-                <span class="label">Поточний резерв</span>
-
-                <h2>10 000 ₴</h2>
-
-                <p>Ваша ціль — 20 000 ₴</p>
-
-                <div class="progress large">
-                    <div style="width:50%"></div>
-                </div>
-
-                <div class="agro-actions">
-                    <button class="primary-button" onclick="openModal('agroModal')">
-                        Поповнити резерв
-                    </button>
-
-                    <button class="secondary-button" onclick="showToast('Налаштування резерву відкрито')">
-                        Налаштувати
-                    </button>
-                </div>
-
-            </div>
-
-
-            <div class="info-grid">
-
-                <div class="content-card">
-                    <span class="info-icon">🛡️</span>
-                    <h3>Фінансова стабільність</h3>
-                    <p>Резерв допомагає покривати непередбачені витрати без використання основних коштів.</p>
-                </div>
-
-                <div class="content-card">
-                    <span class="info-icon">📅</span>
-                    <h3>Сезонні витрати</h3>
-                    <p>Формуйте запас заздалегідь перед періодами підвищених витрат.</p>
-                </div>
-
-                <div class="content-card">
-                    <span class="info-icon">⚡</span>
-                    <h3>Швидкий доступ</h3>
-                    <p>Кошти залишаються доступними тоді, коли вони вам потрібні.</p>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ANALYTICS -->
+        <!-- АНАЛІТИКА -->
         <section class="page" id="analytics">
-
             <div class="page-intro">
-                <h2>Аналітика</h2>
-                <p>Подивіться, куди рухаються ваші гроші.</p>
+                <h2>Аналітика витрат</h2>
+                <p>Структура витрат сезону 2026 та сезонні піки.</p>
             </div>
 
-
-            <div class="analytics-card">
-
-                <div class="analytics-total">
-                    <span>Витрати за місяць</span>
-                    <strong>57 950 ₴</strong>
+            <div class="content-card">
+                <div class="card-heading">
+                    <div><h3>Витрати за сезон — 2 380 000 ₴</h3><p>Без урахування інвестицій у техніку</p></div>
                 </div>
-
-                <div class="category-row">
-                    <div>
-                        <span>Пальне</span>
-                        <strong>18 400 ₴</strong>
+                <div style="margin-top:25px">
+                    <div class="category-row">
+                        <div><span>Пальне та мастила</span><strong>684 000 ₴</strong></div>
+                        <div class="category-progress"><div style="width:78%"></div></div>
                     </div>
-                    <div class="category-progress">
-                        <div style="width:72%"></div>
+                    <div class="category-row">
+                        <div><span>Добрива та ЗЗР</span><strong>592 000 ₴</strong></div>
+                        <div class="category-progress"><div style="width:67%"></div></div>
                     </div>
-                </div>
-
-                <div class="category-row">
-                    <div>
-                        <span>Добрива</span>
-                        <strong>14 200 ₴</strong>
+                    <div class="category-row">
+                        <div><span>Насіння</span><strong>410 000 ₴</strong></div>
+                        <div class="category-progress"><div style="width:47%"></div></div>
                     </div>
-                    <div class="category-progress">
-                        <div style="width:55%"></div>
+                    <div class="category-row">
+                        <div><span>Зарплати</span><strong>380 000 ₴</strong></div>
+                        <div class="category-progress"><div style="width:43%"></div></div>
                     </div>
-                </div>
-
-                <div class="category-row">
-                    <div>
-                        <span>Техніка</span>
-                        <strong>9 800 ₴</strong>
-                    </div>
-                    <div class="category-progress">
-                        <div style="width:40%"></div>
+                    <div class="category-row">
+                        <div><span>Ремонт і запчастини</span><strong>314 000 ₴</strong></div>
+                        <div class="category-progress"><div style="width:36%"></div></div>
                     </div>
                 </div>
-
-                <div class="category-row">
-                    <div>
-                        <span>Інше</span>
-                        <strong>15 550 ₴</strong>
-                    </div>
-                    <div class="category-progress">
-                        <div style="width:62%"></div>
-                    </div>
-                </div>
-
             </div>
 
+            <div class="grid-3">
+                <div class="stat-card">
+                    <span>Пік витрат</span><strong>Квітень</strong>
+                    <small>Посівна забирає 22% річних витрат за місяць</small>
+                </div>
+                <div class="stat-card">
+                    <span>Надходження</span><strong>2 рази на рік</strong>
+                    <small>Липень (пшениця) та жовтень (соняшник)</small>
+                </div>
+                <div class="stat-card">
+                    <span>Місяців без виручки</span><strong>7</strong>
+                    <small class="negative">Листопад – травень</small>
+                </div>
+            </div>
 
             <div class="recommendation">
                 <div class="recommendation-icon">💡</div>
                 <div>
-                    <strong>Фінансова підказка</strong>
-                    <p>Цього місяця витрати на пальне зросли на 8%. Можна встановити ліміт, щоб краще контролювати бюджет.</p>
+                    <strong>Підказка</strong>
+                    <p>Витрати на пальне зросли на 8% проти минулого сезону при тій самій площі. Можна встановити місячний ліміт і отримувати сповіщення при його перевищенні.</p>
                 </div>
-
-                <button class="secondary-button" onclick="showToast('Ліміт встановлено')">
-                    Встановити ліміт
-                </button>
+                <button class="secondary-button" onclick="showToast('Ліміт на пальне встановлено: 70 000 ₴/міс')">Встановити ліміт</button>
             </div>
-
         </section>
 
-
-        <!-- PROFILE -->
+        <!-- ГОСПОДАРСТВО -->
         <section class="page" id="profile">
-
             <div class="page-intro">
-                <h2>Профіль</h2>
-                <p>Ваші персональні дані та налаштування.</p>
+                <h2>Господарство</h2>
+                <p>Дані, доступи та згоди на обробку інформації.</p>
             </div>
-
 
             <div class="profile-card">
-
-                <div class="profile-avatar">UN</div>
-
+                <div class="profile-avatar">SN</div>
                 <div>
-                    <h3>User Name</h3>
-                    <p>Приватний клієнт</p>
+                    <h3>ФГ «NAME»</h3>
+                    <p>120 га · пшениця, соняшник · 5 найманих працівників · Вінницька обл.</p>
                 </div>
-
-                <button class="secondary-button" onclick="showToast('Редагування профілю')">
-                    Редагувати
-                </button>
-
+                <button class="secondary-button" onclick="showToast('Дані господарства оновлено')">Редагувати</button>
             </div>
 
-
-            <div class="settings-list">
-
+            <div class="list-card">
                 <div class="setting">
-                    <div>
-                        <strong>Сповіщення</strong>
-                        <span>Повідомлення про операції</span>
-                    </div>
+                    <div><strong>Прогноз касових розривів</strong><span>Сповіщення за 60 днів до прогнозованого розриву</span></div>
                     <div class="toggle active"></div>
                 </div>
-
                 <div class="setting">
-                    <div>
-                        <strong>Біометрія</strong>
-                        <span>Вхід за допомогою Face ID</span>
-                    </div>
+                    <div><strong>Дані про землі з держреєстрів</strong><span>Уточнює прогноз за площею та культурами</span></div>
                     <div class="toggle active"></div>
                 </div>
-
                 <div class="setting">
-                    <div>
-                        <strong>Автоматичні накопичення</strong>
-                        <span>Поповнювати Agro-подушку щомісяця</span>
-                    </div>
+                    <div><strong>Видимість у каталозі оренди</strong><span>Сусіди-клієнти банку бачать вашу вільну техніку</span></div>
                     <div class="toggle"></div>
                 </div>
-
+                <div class="setting">
+                    <div><strong>Автоматичне резервування під посівну</strong><span>Відкладати частину виручки після жнив</span></div>
+                    <div class="toggle"></div>
+                </div>
             </div>
-
         </section>
 
     </main>
-
-
 </div>
 
-<!-- TRANSFER MODAL -->
-
-<div class="modal" id="transferModal">
-
-
+<!-- МОДАЛКА ОРЕНДИ -->
+<div class="modal" id="rentModal">
     <div class="modal-box">
+        <button class="modal-close" onclick="closeModal('rentModal')">×</button>
+        <span class="modal-icon">🤝</span>
+        <h2 id="rentTitle">Запит на оренду</h2>
+        <p id="rentSub">Банк виступає гарантом угоди.</p>
 
-        <button class="modal-close" onclick="closeModal('transferModal')">×</button>
+        <div class="field">
+            <label>Площа обробітку, га</label>
+            <input id="rentArea" type="number" value="120" min="1" oninput="updateRentTotal()">
+        </div>
+        <div class="field">
+            <label>Орієнтовні дати</label>
+            <select id="rentDates">
+                <option>1–10 травня 2027</option>
+                <option>11–20 травня 2027</option>
+                <option>21–31 травня 2027</option>
+            </select>
+        </div>
 
-        <span class="modal-icon">↗</span>
+        <div class="escrow">
+            <strong>Що робить банк</strong>
+            Резервує кошти на ескроу-рахунку · оформлює договір оренди · підключає страховий поліс партнера · переказує гроші власнику після повернення техніки.
+        </div>
 
-        <h2>Переказ коштів</h2>
-        <p>Введіть реквізити отримувача.</p>
+        <div class="total-row">
+            <span>До сплати через ескроу</span>
+            <strong id="rentTotal">—</strong>
+        </div>
 
-        <label>Номер картки</label>
-        <input id="transferCard" type="text" placeholder="0000 0000 0000 0000">
-
-        <label>Сума</label>
-        <input id="transferAmount" type="number" placeholder="0">
-
-        <button class="primary-button full" onclick="makeTransfer()">
-            Переказати
-        </button>
-
+        <button class="primary-button full" onclick="confirmRent()">Надіслати запит</button>
     </div>
-
-
 </div>
 
-<!-- TOPUP MODAL -->
-
-<div class="modal" id="topupModal">
-
-
+<!-- МОДАЛКА КРЕДИТУ -->
+<div class="modal" id="creditModal">
     <div class="modal-box">
-
-        <button class="modal-close" onclick="closeModal('topupModal')">×</button>
-
-        <span class="modal-icon">＋</span>
-
-        <h2>Поповнення</h2>
-        <p>Додайте кошти на рахунок.</p>
-
-        <label>Сума</label>
-        <input id="topupAmount" type="number" placeholder="0">
-
-        <label>Джерело</label>
-
-        <select id="topupSource">
-            <option>Банківська картка</option>
-            <option>Інший рахунок</option>
-            <option>Готівка</option>
-        </select>
-
-        <button class="primary-button full" onclick="makeTopup()">
-            Поповнити
-        </button>
-
+        <button class="modal-close" onclick="closeModal('creditModal')">×</button>
+        <span class="modal-icon">📄</span>
+        <h2>Заявка на сезонне фінансування</h2>
+        <p>Графік платежів прив'язується до місяців надходжень, а не до календаря.</p>
+        <div id="creditSummary"></div>
+        <div class="escrow">
+            <strong>Попередній графік</strong>
+            Тіло й відсотки гасяться у липні–жовтні, коли надходить виручка. У місяці без доходу платежів немає.
+        </div>
+        <button class="primary-button full" onclick="closeModal('creditModal');showToast('Заявку передано агроменеджеру. Відповідь — протягом 2 робочих днів')">Подати заявку</button>
     </div>
-
-
 </div>
 
-<!-- AGRO MODAL -->
-
-<div class="modal" id="agroModal">
-
-    <div class="modal-box">
-
-        <button class="modal-close" onclick="closeModal('agroModal')">×</button>
-
-        <span class="modal-icon">🌱</span>
-
-        <h2>Agro-подушка</h2>
-        <p>Скільки хочете додати до резерву?</p>
-
-        <label>Сума</label>
-        <input id="agroAmount" type="number" placeholder="0">
-
-        <button class="primary-button full" onclick="makeAgroTopup()">
-            Додати до резерву
-        </button>
-
-    </div>
-
-</div>
-
-<!-- TOAST -->
-
-<div class="toast" id="toast">
-    <span>✓</span>
-    <span id="toastText">Готово!</span>
-</div>
+<div class="toast" id="toast"><span>✓</span><span id="toastText">Готово</span></div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
