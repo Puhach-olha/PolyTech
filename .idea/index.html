@@ -1,0 +1,690 @@
+﻿<!DOCTYPE html>
+
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Agricole Agro+</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-mark">CA</div>
+            <div>
+                <strong>Credit Agricole</strong>
+                <span>Agro+</span>
+            </div>
+        </div>
+
+        <nav class="nav">
+            <button class="active" data-page="home">
+                <span>🏠</span>
+                <span>Головна</span>
+            </button>
+
+            <button data-page="finance">
+                <span>💰</span>
+                <span>Фінанси</span>
+            </button>
+
+            <button data-page="subscriptions">
+                <span>📦</span>
+                <span>Підписки</span>
+            </button>
+
+            <button data-page="agro">
+                <span>🌱</span>
+                <span>Agro-подушка</span>
+            </button>
+
+            <button data-page="analytics">
+                <span>📊</span>
+                <span>Аналітика</span>
+            </button>
+
+            <button data-page="profile">
+                <span>👤</span>
+                <span>Профіль</span>
+            </button>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="security">
+                <span>🔒</span>
+                <div>
+                    <strong>Безпека</strong>
+                    <small>Ваші кошти захищені</small>
+                </div>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- HEADER -->
+        <header class="topbar">
+            <div>
+                <span class="eyebrow">AGRO+</span>
+                <h1 id="pageTitle">Головна</h1>
+            </div>
+
+            <div class="user-mini">
+                <div class="avatar">UN</div>
+                <div>
+                    <strong>Name</strong>
+                    <small>Приватний клієнт</small>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- HOME -->
+        <section class="page active" id="home">
+
+            <div class="hero-card">
+                <div>
+                    <span class="label">Загальний баланс</span>
+                    <h2>128 450 ₴</h2>
+                    <p class="positive">↑ 8,4% за цей місяць</p>
+                </div>
+
+                <div class="hero-decoration">₴</div>
+            </div>
+
+
+            <div class="quick-actions">
+
+                <button class="action-card" onclick="openModal('transferModal')">
+                    <div class="action-icon">↗</div>
+                    <strong>Переказати</strong>
+                    <span>Надіслати кошти</span>
+                </button>
+
+                <button class="action-card" onclick="openModal('topupModal')">
+                    <div class="action-icon">＋</div>
+                    <strong>Поповнити</strong>
+                    <span>Додати кошти</span>
+                </button>
+
+                <button class="action-card" onclick="showPage('agro')">
+                    <div class="action-icon">🌱</div>
+                    <strong>Agro-подушка</strong>
+                    <span>Резерв на сезон</span>
+                </button>
+
+            </div>
+
+
+            <div class="section-heading">
+                <div>
+                    <h2>Ваші фінансові продукти</h2>
+                    <p>Інструменти для стабільності та розвитку</p>
+                </div>
+            </div>
+
+
+            <div class="products-grid">
+
+                <div class="product-card">
+                    <div class="product-top">
+                        <span class="product-icon">🌱</span>
+                        <span class="status">Активна</span>
+                    </div>
+
+                    <h3>Agro-подушка</h3>
+                    <p>Фінансовий резерв для непередбачених витрат.</p>
+
+                    <div class="product-value">
+                        <strong>10 000 ₴</strong>
+                        <span>із 20 000 ₴</span>
+                    </div>
+
+                    <div class="progress">
+                        <div style="width:50%"></div>
+                    </div>
+                </div>
+
+
+                <div class="product-card">
+                    <div class="product-top">
+                        <span class="product-icon">📦</span>
+                        <span class="status">Активна</span>
+                    </div>
+
+                    <h3>Agro Start</h3>
+                    <p>Базовий набір фінансових сервісів.</p>
+
+                    <div class="product-value">
+                        <strong>99 ₴</strong>
+                        <span>на місяць</span>
+                    </div>
+                </div>
+
+
+                <div class="product-card">
+                    <div class="product-top">
+                        <span class="product-icon">📈</span>
+                        <span class="status">Новинка</span>
+                    </div>
+
+                    <h3>Фінансовий аналітик</h3>
+                    <p>Автоматичний аналіз ваших витрат та доходів.</p>
+
+                    <button class="text-button" onclick="showPage('analytics')">
+                        Переглянути →
+                    </button>
+                </div>
+
+            </div>
+
+
+            <div class="section-heading">
+                <div>
+                    <h2>Останні операції</h2>
+                    <p>Ваші останні фінансові активності</p>
+                </div>
+            </div>
+
+
+            <div class="transactions">
+
+                <div class="transaction">
+                    <div class="transaction-icon income">↓</div>
+                    <div class="transaction-info">
+                        <strong>Поповнення рахунку</strong>
+                        <span>Сьогодні, 12:42</span>
+                    </div>
+                    <strong class="transaction-amount positive">+15 000 ₴</strong>
+                </div>
+
+                <div class="transaction">
+                    <div class="transaction-icon expense">↑</div>
+                    <div class="transaction-info">
+                        <strong>Пальне</strong>
+                        <span>Сьогодні, 09:15</span>
+                    </div>
+                    <strong class="transaction-amount">−2 400 ₴</strong>
+                </div>
+
+                <div class="transaction">
+                    <div class="transaction-icon expense">↑</div>
+                    <div class="transaction-info">
+                        <strong>Добрива</strong>
+                        <span>Вчора, 16:30</span>
+                    </div>
+                    <strong class="transaction-amount">−8 700 ₴</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FINANCE -->
+        <section class="page" id="finance">
+
+            <div class="page-intro">
+                <h2>Фінанси</h2>
+                <p>Контролюйте доходи, витрати та накопичення.</p>
+            </div>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <span>Доходи</span>
+                    <strong>186 400 ₴</strong>
+                    <small class="positive">↑ 12,5%</small>
+                </div>
+
+                <div class="stat-card">
+                    <span>Витрати</span>
+                    <strong>57 950 ₴</strong>
+                    <small>За поточний місяць</small>
+                </div>
+
+                <div class="stat-card">
+                    <span>Заощадження</span>
+                    <strong>128 450 ₴</strong>
+                    <small class="positive">69% доходу</small>
+                </div>
+
+            </div>
+
+
+            <div class="content-card">
+                <div class="card-heading">
+                    <div>
+                        <h3>Фінансовий баланс</h3>
+                        <p>Динаміка за останні 6 місяців</p>
+                    </div>
+                </div>
+
+                <div class="chart">
+
+                    <div class="bar-group">
+                        <div class="bar" style="height:45%"></div>
+                        <span>Квіт</span>
+                    </div>
+
+                    <div class="bar-group">
+                        <div class="bar" style="height:58%"></div>
+                        <span>Трав</span>
+                    </div>
+
+                    <div class="bar-group">
+                        <div class="bar" style="height:52%"></div>
+                        <span>Чер</span>
+                    </div>
+
+                    <div class="bar-group">
+                        <div class="bar" style="height:70%"></div>
+                        <span>Лип</span>
+                    </div>
+
+                    <div class="bar-group">
+                        <div class="bar" style="height:78%"></div>
+                        <span>Сер</span>
+                    </div>
+
+                    <div class="bar-group">
+                        <div class="bar active-bar" style="height:92%"></div>
+                        <span>Вер</span>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="content-card goal-card">
+
+                <div>
+                    <span class="label">Фінансова ціль</span>
+                    <h3>Резервний фонд</h3>
+                    <p>Залишилось накопичити 10 000 ₴</p>
+                </div>
+
+                <div class="goal-progress">
+                    <strong>50%</strong>
+                    <div class="progress">
+                        <div style="width:50%"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SUBSCRIPTIONS -->
+        <section class="page" id="subscriptions">
+
+            <div class="page-intro">
+                <h2>Підписки</h2>
+                <p>Оберіть набір сервісів під ваші фінансові потреби.</p>
+            </div>
+
+
+            <div class="subscription-grid">
+
+                <div class="subscription-card">
+
+                    <span class="subscription-badge">Для початку</span>
+
+                    <h3>Agro Start</h3>
+
+                    <div class="price">
+                        99 ₴
+                        <span>/ місяць</span>
+                    </div>
+
+                    <p>Основні фінансові інструменти для щоденного використання.</p>
+
+                    <ul>
+                        <li>✓ Автоматична аналітика</li>
+                        <li>✓ Фінансові нагадування</li>
+                        <li>✓ Контроль витрат</li>
+                        <li>✓ Agro-подушка</li>
+                    </ul>
+
+                    <button class="primary-button" onclick="activateSubscription('Agro Start')">
+                        Підключити
+                    </button>
+
+                </div>
+
+
+                <div class="subscription-card featured">
+
+                    <span class="subscription-badge">Для бізнесу</span>
+
+                    <h3>Agro Business</h3>
+
+                    <div class="price">
+                        299 ₴
+                        <span>/ місяць</span>
+                    </div>
+
+                    <p>Розширені інструменти для управління фінансами агробізнесу.</p>
+
+                    <ul>
+                        <li>✓ Все з Agro Start</li>
+                        <li>✓ Бізнес-аналітика</li>
+                        <li>✓ Прогнозування витрат</li>
+                        <li>✓ Розширена Agro-подушка</li>
+                    </ul>
+
+                    <button class="primary-button" onclick="activateSubscription('Agro Business')">
+                        Підключити
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- AGRO -->
+        <section class="page" id="agro">
+
+            <div class="page-intro">
+                <h2>Agro-подушка</h2>
+                <p>Ваш резерв для непередбачених витрат та сезонних ризиків.</p>
+            </div>
+
+
+            <div class="agro-main-card">
+
+                <div class="agro-icon">🌱</div>
+
+                <span class="label">Поточний резерв</span>
+
+                <h2>10 000 ₴</h2>
+
+                <p>Ваша ціль — 20 000 ₴</p>
+
+                <div class="progress large">
+                    <div style="width:50%"></div>
+                </div>
+
+                <div class="agro-actions">
+                    <button class="primary-button" onclick="openModal('agroModal')">
+                        Поповнити резерв
+                    </button>
+
+                    <button class="secondary-button" onclick="showToast('Налаштування резерву відкрито')">
+                        Налаштувати
+                    </button>
+                </div>
+
+            </div>
+
+
+            <div class="info-grid">
+
+                <div class="content-card">
+                    <span class="info-icon">🛡️</span>
+                    <h3>Фінансова стабільність</h3>
+                    <p>Резерв допомагає покривати непередбачені витрати без використання основних коштів.</p>
+                </div>
+
+                <div class="content-card">
+                    <span class="info-icon">📅</span>
+                    <h3>Сезонні витрати</h3>
+                    <p>Формуйте запас заздалегідь перед періодами підвищених витрат.</p>
+                </div>
+
+                <div class="content-card">
+                    <span class="info-icon">⚡</span>
+                    <h3>Швидкий доступ</h3>
+                    <p>Кошти залишаються доступними тоді, коли вони вам потрібні.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ANALYTICS -->
+        <section class="page" id="analytics">
+
+            <div class="page-intro">
+                <h2>Аналітика</h2>
+                <p>Подивіться, куди рухаються ваші гроші.</p>
+            </div>
+
+
+            <div class="analytics-card">
+
+                <div class="analytics-total">
+                    <span>Витрати за місяць</span>
+                    <strong>57 950 ₴</strong>
+                </div>
+
+                <div class="category-row">
+                    <div>
+                        <span>Пальне</span>
+                        <strong>18 400 ₴</strong>
+                    </div>
+                    <div class="category-progress">
+                        <div style="width:72%"></div>
+                    </div>
+                </div>
+
+                <div class="category-row">
+                    <div>
+                        <span>Добрива</span>
+                        <strong>14 200 ₴</strong>
+                    </div>
+                    <div class="category-progress">
+                        <div style="width:55%"></div>
+                    </div>
+                </div>
+
+                <div class="category-row">
+                    <div>
+                        <span>Техніка</span>
+                        <strong>9 800 ₴</strong>
+                    </div>
+                    <div class="category-progress">
+                        <div style="width:40%"></div>
+                    </div>
+                </div>
+
+                <div class="category-row">
+                    <div>
+                        <span>Інше</span>
+                        <strong>15 550 ₴</strong>
+                    </div>
+                    <div class="category-progress">
+                        <div style="width:62%"></div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="recommendation">
+                <div class="recommendation-icon">💡</div>
+                <div>
+                    <strong>Фінансова підказка</strong>
+                    <p>Цього місяця витрати на пальне зросли на 8%. Можна встановити ліміт, щоб краще контролювати бюджет.</p>
+                </div>
+
+                <button class="secondary-button" onclick="showToast('Ліміт встановлено')">
+                    Встановити ліміт
+                </button>
+            </div>
+
+        </section>
+
+
+        <!-- PROFILE -->
+        <section class="page" id="profile">
+
+            <div class="page-intro">
+                <h2>Профіль</h2>
+                <p>Ваші персональні дані та налаштування.</p>
+            </div>
+
+
+            <div class="profile-card">
+
+                <div class="profile-avatar">ОП</div>
+
+                <div>
+                    <h3>Ольга Пухач</h3>
+                    <p>Приватний клієнт</p>
+                </div>
+
+                <button class="secondary-button" onclick="showToast('Редагування профілю')">
+                    Редагувати
+                </button>
+
+            </div>
+
+
+            <div class="settings-list">
+
+                <div class="setting">
+                    <div>
+                        <strong>Сповіщення</strong>
+                        <span>Повідомлення про операції</span>
+                    </div>
+                    <div class="toggle active"></div>
+                </div>
+
+                <div class="setting">
+                    <div>
+                        <strong>Біометрія</strong>
+                        <span>Вхід за допомогою Face ID</span>
+                    </div>
+                    <div class="toggle active"></div>
+                </div>
+
+                <div class="setting">
+                    <div>
+                        <strong>Автоматичні накопичення</strong>
+                        <span>Поповнювати Agro-подушку щомісяця</span>
+                    </div>
+                    <div class="toggle"></div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+</div>
+
+<!-- TRANSFER MODAL -->
+
+<div class="modal" id="transferModal">
+
+
+    <div class="modal-box">
+
+        <button class="modal-close" onclick="closeModal('transferModal')">×</button>
+
+        <span class="modal-icon">↗</span>
+
+        <h2>Переказ коштів</h2>
+        <p>Введіть реквізити отримувача.</p>
+
+        <label>Номер картки</label>
+        <input id="transferCard" type="text" placeholder="0000 0000 0000 0000">
+
+        <label>Сума</label>
+        <input id="transferAmount" type="number" placeholder="0">
+
+        <button class="primary-button full" onclick="makeTransfer()">
+            Переказати
+        </button>
+
+    </div>
+
+
+</div>
+
+<!-- TOPUP MODAL -->
+
+<div class="modal" id="topupModal">
+
+
+    <div class="modal-box">
+
+        <button class="modal-close" onclick="closeModal('topupModal')">×</button>
+
+        <span class="modal-icon">＋</span>
+
+        <h2>Поповнення</h2>
+        <p>Додайте кошти на рахунок.</p>
+
+        <label>Сума</label>
+        <input id="topupAmount" type="number" placeholder="0">
+
+        <label>Джерело</label>
+
+        <select id="topupSource">
+            <option>Банківська картка</option>
+            <option>Інший рахунок</option>
+            <option>Готівка</option>
+        </select>
+
+        <button class="primary-button full" onclick="makeTopup()">
+            Поповнити
+        </button>
+
+    </div>
+
+
+</div>
+
+<!-- AGRO MODAL -->
+
+<div class="modal" id="agroModal">
+
+    <div class="modal-box">
+
+        <button class="modal-close" onclick="closeModal('agroModal')">×</button>
+
+        <span class="modal-icon">🌱</span>
+
+        <h2>Agro-подушка</h2>
+        <p>Скільки хочете додати до резерву?</p>
+
+        <label>Сума</label>
+        <input id="agroAmount" type="number" placeholder="0">
+
+        <button class="primary-button full" onclick="makeAgroTopup()">
+            Додати до резерву
+        </button>
+
+    </div>
+
+</div>
+
+<!-- TOAST -->
+
+<div class="toast" id="toast">
+    <span>✓</span>
+    <span id="toastText">Готово!</span>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
